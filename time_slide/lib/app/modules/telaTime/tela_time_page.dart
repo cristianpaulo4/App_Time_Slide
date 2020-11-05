@@ -23,6 +23,8 @@ class _TelaTimePageState
   int index = 1;
   bool value_color = true;
 
+  bool controler = true;
+
   @override
   void initState() {
     totalSegundos = listarSlide.elementAt(0).totalSegundos;
@@ -30,9 +32,11 @@ class _TelaTimePageState
     tempo = Duration(seconds: listarSlide.elementAt(0).totalSegundos);
 
     Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        cronometro();
-      });
+      if (controler) {
+        setState(() {
+          cronometro();
+        });
+      }
     });
     super.initState();
   }
@@ -122,6 +126,7 @@ class _TelaTimePageState
   // cronometro
   cronometro() {
     if (totalSegundos == 0 && index == listarSlide.length) {
+      controler = false;
       print('Apresentação finalizado');
       Modular.to.pushReplacementNamed('finalizar');
     }
