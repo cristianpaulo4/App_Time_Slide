@@ -1,6 +1,7 @@
 import 'package:time_slide/app/modules/finalizar/finalizar_controller.dart';
 import 'package:time_slide/app/modules/finalizar/finalizar_page.dart';
 import 'package:time_slide/app/modules/telaTime/tela_time_controller.dart';
+import 'package:time_slide/app/modules/telaTime/tela_time_module.dart';
 import 'package:time_slide/app/modules/telaTime/tela_time_page.dart';
 import 'package:time_slide/app/modules/timePreparacao/time_preparacao_controller.dart';
 import 'package:time_slide/app/modules/timePreparacao/time_preparacao_page.dart';
@@ -25,8 +26,8 @@ class AppModule extends MainModule {
         ModularRouter(Modular.initialRoute, module: HomeModule()),
         ModularRouter(
           '/telaTime',
-          child: (_, args) => TelaTimePage(),
           transition: TransitionType.downToUp,
+          module: TelaTimeModule(),
         ),
         ModularRouter(
           '/prepare',

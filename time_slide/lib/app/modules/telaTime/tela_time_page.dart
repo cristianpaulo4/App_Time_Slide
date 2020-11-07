@@ -101,15 +101,21 @@ class _TelaTimePageState
               title: Text('Deseja Finalizar?'),
               actions: [
                 CupertinoButton(
-                  color: Colors.red,
-                  child: Text('Não'),
+                  child: Text(
+                    'Não',
+                    style: TextStyle(
+                      color: Colors.red,
+                      
+                    ),
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
                 CupertinoButton(
-                  color: Colors.green,
-                  child: Text('Sim'),
+                  child: Text(
+                    'Sim',
+                  ),
                   onPressed: () {
                     listarSlide.clear();
                     Modular.to.pushReplacementNamed('/');
@@ -140,7 +146,7 @@ class _TelaTimePageState
       }
     }
 
-    if (Duration(seconds: totalSegundos).inSeconds <= 10) {
+    if (Duration(seconds: totalSegundos).inSeconds <= 11) {
       value_color = false;
     } else {
       value_color = true;

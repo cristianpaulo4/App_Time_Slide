@@ -71,6 +71,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                       ),
                       onPressed: () async {
                         tempo = await showTimePicker(
+                          initialEntryMode: TimePickerEntryMode.input,
+                          useRootNavigator: true,
                           context: context,
                           initialTime: TimeOfDay(hour: 0, minute: 0),
                         );
